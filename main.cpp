@@ -25,8 +25,8 @@ T Min(T a, T b) {
 /// <returns></returns>
 template <>
 char Min<char>(char a, char b) {
-	// 出力する文
-	printf("数字以外は代入できません");
+	// char型の場合に出力する文
+	printf_s("数字以外は代入できません");
 	// 空文字を返す
 	return '\0';
 }
@@ -39,6 +39,6 @@ int main() {
 	// double型
 	printf("%lf\n", Min<double>(10.0, 20.0));
 	// char型
-	printf("%c\n", Min<char>('10', '20'));
+	Min(char('10'), char('20'));
 	return 0;
 }
