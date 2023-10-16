@@ -8,14 +8,16 @@
 int Recursive(int wage,int hour) {
 	// ŠÔ
 	int RemainingTime = hour - 1;
-	int sum = 0;
+	int prevWage = 0;
 	int recWage = 0;
 	// ‹‹
 	if (hour > 0) {
-		sum = wage;
+		// ˆêŠÔ‘O‚Ì’À‹à
+		prevWage = wage;
+		// Œ»İŠÔ‚Ì’À‹à
 		recWage = wage * 2 - 50;
 		// Ä‹A
-		return (sum + Recursive(recWage, RemainingTime));
+		return (prevWage + Recursive(recWage, RemainingTime));
 	}
 	// I—¹
 	return recWage;
