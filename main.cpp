@@ -31,8 +31,8 @@ int main() {
 	// 働く時間
 	int timeValue = 9;
 	int result;
-	//printf("働く時間を入力してください...\n");
-	//scanf_s("%d\n", &timeValue);
+	printf("働く時間を入力してください...\n");
+	scanf_s("%d時間", &timeValue);
 	// 再帰的な賃金計算の結果
 	result = Recursive(hourWage, timeValue);
 	printf("再帰的な賃金計算 : %d\n", result);
