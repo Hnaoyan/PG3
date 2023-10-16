@@ -6,12 +6,19 @@
 /// <param name="money"></param>
 /// <returns></returns>
 int Recursive(int wage,int hour) {
+	// ŠÔ
 	int RemainingTime = hour - 1;
-	int recWage = wage * 2 - 50;
-	if (RemainingTime <= 1) {
-		return (recWage);
+	int sum = 0;
+	int recWage = 0;
+	// ‹‹
+	if (hour > 0) {
+		sum = wage;
+		recWage = wage * 2 - 50;
+		// Ä‹A
+		return (sum + Recursive(recWage, RemainingTime));
 	}
-	return (Recursive(recWage, RemainingTime));
+	// I—¹
+	return recWage;
 }
 
 /// <summary>
