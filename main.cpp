@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 /// <summary>
-/// 再帰的な賃金計算
+/// 再帰的な賃金の計算
 /// </summary>
 /// <param name="money"></param>
 /// <returns></returns>
