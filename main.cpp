@@ -45,11 +45,11 @@ int main() {
 	// —”‰Šú‰»
 	srand(time(nullptr));
 
-	std::function<int(int)> fx = [](int i) {return i + 2; };
-
 	PFunc p;
 	p = Dice;
-	SetTimeOut(p,3);
+
+	std::function<void(PFunc, int)> allFunction = [](PFunc p, int i) {return SetTimeOut(p, i); };
+	allFunction(p, 3);
 
 	return 0;
 }
