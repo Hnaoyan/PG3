@@ -5,7 +5,7 @@
 /// </summary>
 /// <param name="money"></param>
 /// <returns></returns>
-int Recursive(int wage,int hour) {
+int CalcRecursive(int wage,int hour) {
 	// 時間
 	int RemainingTime = hour - 1;
 	int prevWage = 0;
@@ -17,7 +17,7 @@ int Recursive(int wage,int hour) {
 		// 現在時間の賃金
 		recWage = wage * 2 - 50;
 		// 再帰
-		return (prevWage + Recursive(recWage, RemainingTime));
+		return (prevWage + CalcRecursive(recWage, RemainingTime));
 	}
 	// 終了
 	return recWage;
@@ -43,7 +43,7 @@ int main() {
 	printf("働く時間を入力してください...\n");
 	scanf_s("%d時間", &timeValue);
 	// 再帰的な賃金計算の結果
-	result = Recursive(hourWage, timeValue);
+	result = CalcRecursive(hourWage, timeValue);
 	printf("再帰的な賃金計算 : %d\n", result);
 
 	// 一般的な賃金計算の結果
