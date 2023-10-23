@@ -44,6 +44,8 @@ int main() {
 	// 関数ポインタの設定
 	PFunc p;
 	p = Dice;
+	// ファンクションの設定
+	std::function<void(PFunc, int, int)> allFunction = [](PFunc p, int i, int param) {return SetTimeOut(p, i, param); };
 
 	// 入力処理
 	int answer = 0;
@@ -51,7 +53,6 @@ int main() {
 	scanf_s("%d", &answer);
 	printf("結果は...\n");
 
-	std::function<void(PFunc, int, int)> allFunction = [](PFunc p, int i, int param) {return SetTimeOut(p, i, param); };
 	allFunction(p, 3, answer);
 
 	return 0;
