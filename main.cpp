@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <Windows.h>
 #include <time.h>
+#include <functional>
 
 typedef void (*PFunc)(int*);
 
@@ -43,6 +44,8 @@ void SetTimeOut(PFunc p, int second) {
 int main() {
 	// —”‰Šú‰»
 	srand(time(nullptr));
+
+	std::function<int(int)> fx = [](int i) {return i + 2; };
 
 	PFunc p;
 	p = Dice;
