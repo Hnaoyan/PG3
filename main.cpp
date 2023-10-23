@@ -29,11 +29,11 @@ void Dice(int* answer) {
 	}
 }
 
-void SetTimeOut(PFunc p, int second, int answer) {
+void SetTimeOut(PFunc p, int second, int param) {
 	// コールバックを呼び出す
 	Sleep(second * 1000);
 
-	p(&answer);
+	p(&param);
 }
 
 int main() {
