@@ -2,10 +2,11 @@
 class Enemy
 {
 public:	// サブクラス
-	enum class State {
+	enum State {
 		kApproach,
 		kShooting,
 		kBreakAway,
+		kEnd,
 	};
 
 public: // メンバ関数
@@ -22,6 +23,8 @@ public: // メンバ関数
 	/// 更新処理
 	/// </summary>
 	void Update();
+
+	int GetState() { return phase_; }
 
 private:
 	/// <summary>
@@ -44,6 +47,6 @@ private:
 	static void(Enemy::*pFuncTable[])();
 
 	// 状態管理変数（EnumClass）
-	State phase_ = State::kApproach;
+	int phase_ = State::kApproach;
 };
 
