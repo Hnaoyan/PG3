@@ -51,10 +51,8 @@ int main() {
 	scanf_s("%d", &answer);
 	printf("Œ‹‰Ê‚Í...\n");
 
-	SetTimeOut(p, 3, answer);
-
-	std::function<void(PFunc, int)> allFunction = [](PFunc p, int i) {return SetTimeOut(p, i); };
-	allFunction(p, 3);
+	std::function<void(PFunc, int, int)> allFunction = [](PFunc p, int i, int param) {return SetTimeOut(p, i, param); };
+	allFunction(p, 3, answer);
 
 	return 0;
 }
