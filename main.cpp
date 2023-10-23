@@ -30,23 +30,28 @@ void Dice(int* answer) {
 	}
 }
 
-void SetTimeOut(PFunc p, int second) {
-	int answer = 0;
-	printf("丁：０ 半：１\n");
-	scanf_s("%d", &answer);
-	printf("結果は...\n");
+void SetTimeOut(PFunc p, int second, int param) {
 	// コールバックを呼び出す
 	Sleep(second * 1000);
 
-	p(&answer);
+	p(&param);
 }
 
 int main() {
 	// 乱数初期化
 	srand(time(nullptr));
 
+	// 関数ポインタの設定
 	PFunc p;
 	p = Dice;
+
+	// 入力処理
+	int answer = 0;
+	printf("丁：０ 半：１\n");
+	scanf_s("%d", &answer);
+	printf("結果は...\n");
+
+	SetTimeOut(p, 3, answer);
 
 	std::function<void(PFunc, int)> allFunction = [](PFunc p, int i) {return SetTimeOut(p, i); };
 	allFunction(p, 3);
