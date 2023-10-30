@@ -5,7 +5,7 @@
 
 typedef void (*PFunc)(int*);
 
-void Dice(int* answer) {
+void RollDice(int* answer) {
 
 	int dice = rand() % 6 + 1;
 
@@ -43,7 +43,7 @@ int main() {
 
 	// 関数ポインタの設定
 	PFunc p;
-	p = Dice;
+	p = RollDice;
 	// ファンクションの設定
 	std::function<void(PFunc, int, int)> allFunction = [](PFunc p, int i, int param) {return SetTimeOut(p, i, param); };
 
