@@ -1,5 +1,4 @@
-﻿#include <stdio.h>
-#include <Windows.h>
+#include <stdio.h>
 
 int main() {
 	char str[] = "テスト";
