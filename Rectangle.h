@@ -1,9 +1,9 @@
 ﻿#pragma once
 #include "IShape.h"
 
-class Circle : public IShape
+class Rectangle : public IShape
 {
-public:
+public: // 継承
 	void Size() override;
 	void Draw() override;
 

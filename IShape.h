@@ -1,18 +1,22 @@
 ﻿#pragma once
+#include <iostream>
+#include <cmath>
+
 class IShape
 {
-public: // サブクラス
-	struct Vector2 {
-		float x, y;
-	};
-
 public: // メンバ関数
 	virtual void Size() = 0;
 	virtual void Draw() = 0;
 
 protected:
-	Vector2 position;
-	float radius;
+	// 面積
+	float area_;
 
+	// 半径
+	float radius_;
+	// 幅
+	float width_;
+	// 高さ
+	float height_;
 };
 
