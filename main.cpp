@@ -10,9 +10,11 @@ int main() {
 	// 矩形クラス
 	std::unique_ptr<Rectangle> rectangle_ = std::make_unique<Rectangle>();
 
+	// 計算
 	circle_->Size();
 	rectangle_->Size();
 
+	// 出力
 	circle_->Draw();
 	rectangle_->Draw();
 
