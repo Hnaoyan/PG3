@@ -9,10 +9,9 @@ void Enemy::Update()
 {
 	// 関数ポインタテーブル
 	(this->*pFuncTable[static_cast<size_t>(phase_)])();
-	//if (phase_ != Enemy::kEnd) {
 	// フェーズカウントを加算
-		phase_ += 1;
-	//}
+	phase_ += 1;
+	
 	printf("行動後\n");
 }
 
