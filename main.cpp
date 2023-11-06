@@ -5,16 +5,16 @@
 #include <memory>
 
 int main() {
-	// ‰~ƒNƒ‰ƒX
+	// å††ã‚¯ãƒ©ã‚¹
 	std::unique_ptr<Circle> circle_ = std::make_unique<Circle>();
-	// ‹éŒ`ƒNƒ‰ƒX
+	// çŸ©å½¢ã‚¯ãƒ©ã‚¹
 	std::unique_ptr<Rectangle> rectangle_ = std::make_unique<Rectangle>();
 
-	// ŒvZ
+	// è¨ˆç®—
 	circle_->Size();
 	rectangle_->Size();
 
-	// o—Í
+	// å‡ºåŠ›
 	circle_->Draw();
 	rectangle_->Draw();
 
