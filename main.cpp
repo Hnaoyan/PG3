@@ -30,12 +30,12 @@ void RollDice(int* answer) {
 	}
 }
 
-void SetTimeOut(PFunc p, int second, int param) {
+std::function<void(PFunc, int, int)> SetTimeOut = [](PFunc p, int second, int param) {
 	// コールバックを呼び出す
 	Sleep(second * 1000);
 
 	p(&param);
-}
+};
 
 int main() {
 	// 乱数初期化
@@ -45,15 +45,17 @@ int main() {
 	PFunc p;
 	p = RollDice;
 	// ファンクションの設定
-	std::function<void(PFunc, int, int)> allFunction = [](PFunc p, int i, int param) {return SetTimeOut(p, i, param); };
+	//std::function<void(PFunc, int, int)> allFunction = [](PFunc p, int i, int param) {return SetTimeOut(p, i, param); };
 
 	// 入力処理
 	int answer = 0;
 	printf("丁：０ 半：１\n");
-	scanf_s("%d", &answer);
+	answer = [=]() {return scanf_s("%d", &answer); }();
 	printf("結果は...\n");
 
-	allFunction(p, 3, answer);
+	SetTimeOut(p, 3, answer);
+
+	//allFunction(p, 3, answer);
 
 	return 0;
 }
