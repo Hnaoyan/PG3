@@ -50,11 +50,11 @@ int main() {
 	scanf_s("%d", &answer); 
 	printf("Œ‹‰Ê‚Í...\n");
 
-	std::function<void()> func = [&]() {
+	std::function<void()> resultFunc = [&]() {
 		p(&answer);
 	};
 
-	SetTimeOut(func, 3);
+	SetTimeOut(resultFunc, 3);
 
 	return 0;
 }
