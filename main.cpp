@@ -41,8 +41,8 @@ int main() {
 	srand(time(nullptr));
 
 	// ŠÖ”ƒ|ƒCƒ“ƒ^‚Ìİ’è
-	PFunc p;
-	p = RollDice;
+	PFunc pRollDice;
+	pRollDice = RollDice;
 
 	// “ü—Íˆ—
 	int answer = 0;
@@ -51,7 +51,7 @@ int main() {
 	printf("Œ‹‰Ê‚Í...\n");
 
 	std::function<void()> resultFunc = [&]() {
-		p(&answer);
+		pRollDice(&answer);
 	};
 
 	SetTimeOut(resultFunc, 3);
