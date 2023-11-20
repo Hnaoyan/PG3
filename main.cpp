@@ -30,12 +30,11 @@ void RollDice(int* answer) {
 	}
 }
 
-std::function<void(int)> SetTimeOut(PFunc p,int second) /*= [&](PFunc p, int second, int param) */{
-	// コールバックを呼び出す
+void SetTimeOut(std::function<void()> CallBackFunc, int second) {
 	Sleep(second * 1000);
 
-	return [p](int answer) {p(&answer); };
-};
+	CallBackFunc();
+}
 
 int main() {
 	// 乱数初期化
@@ -51,9 +50,11 @@ int main() {
 	scanf_s("%d", &answer); 
 	printf("結果は...\n");
 
-	auto fx = SetTimeOut(p, 3);
+	std::function<void()> func = [&]() {
+		p(&answer);
+	};
 
-	fx(answer);
+	SetTimeOut(func, 3);
 
 	return 0;
 }
